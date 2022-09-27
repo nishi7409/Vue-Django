@@ -6,4 +6,5 @@ from rest_framework import permissions
 # all api endpoints
 urlpatterns = [
     path('test/', Test.as_view()),
+    path('test2/', Test2.as_view()),
 ]
