@@ -22,11 +22,18 @@
     data: function() {
       return {
         testVariable: this.testGet(),
+        testVariable2: this.testGet2()
       }
     },
     methods: {
       testGet() {
         axios.get("http://127.0.0.1:8000/test/", {headers: {'Content-Type': 'application/json'}}).then(response => {
+          this.testVariable = response.data.response
+          console.log(response.data)
+        })
+      },
+      testGet2() {
+        axios.get("http://127.0.0.1:8000/test2/", {headers: {'Content-Type': 'application/json'}}).then(response => {
           this.testVariable = response.data.response
           console.log(response.data)
         })
